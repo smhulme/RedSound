@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Sound - Professional Audio Rentals</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles to supplement Tailwind */
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .bg-dark-gray { background-color: #1a1a1a; }
+        .bg-mid-gray { background-color: #2c2c2c; }
+        .bg-header-footer { background-color: #111; }
+        .text-main-red { color: #e53935; }
+        .border-main-red { border-color: #e53935; }
+        .hover-bg-dark-red:hover { background-color: #c62828; }
+        .bg-main-red { background-color: #e53935; }
+
+        /* Hide pages by default */
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-dark-gray text-gray-200">
+
+    <!-- Header -->
+    <header class="bg-header-footer py-5 text-center">
+        <a href="#home">
+            <img src="Logo2-1.jpg" alt="Red Sound Logo" class="mx-auto w-40 md:w-52" onerror="this.onerror=null; this.src='https://placehold.co/200x120/111111/e53935?text=Red+Sound';">
+        </a>
+    </header>
+
+    <main id="app-root" class="mx-auto">
+
+        <!-- Home Page Section -->
+        <div id="home" class="page">
+            <!-- Hero Section -->
+            <section class="text-center py-16 px-6">
+                <h1 class="text-4xl md:text-5xl font-bold text-main-red mb-4">Professional Sound & Lighting</h1>
+                <p class="max-w-2xl mx-auto text-lg text-gray-300">
+                    From intimate gatherings to large-scale productions, we provide top-tier equipment and expert support to make your event unforgettable.
+                </p>
+            </section>
+
+            <!-- Offerings Section -->
+            <section class="py-16 px-6 bg-mid-gray">
+                <div class="max-w-6xl mx-auto">
+                    <h2 class="text-3xl font-bold text-center mb-12 text-main-red border-b-2 border-main-red inline-block pb-2">What We Rent</h2>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
+                        <div class="bg-dark-gray p-6 rounded-lg border-l-4 border-main-red shadow-lg">
+                            <h3 class="text-xl font-bold mb-2 text-white">Speaker Array Systems</h3>
+                            <p class="text-gray-400">Crystal-clear, powerful line array speakers suitable for concerts, festivals, and corporate events. Scalable for any audience size.</p>
+                        </div>
+                        <div class="bg-dark-gray p-6 rounded-lg border-l-4 border-main-red shadow-lg">
+                            <h3 class="text-xl font-bold mb-2 text-white">Microphones</h3>
+                            <p class="text-gray-400">A wide selection of wired and wireless microphones from industry-leading brands like Shure, Sennheiser, and Audio-Technica.</p>
+                        </div>
+                        <div class="bg-dark-gray p-6 rounded-lg border-l-4 border-main-red shadow-lg">
+                            <h3 class="text-xl font-bold mb-2 text-white">Lighting & Effects</h3>
+                            <p class="text-gray-400">Dynamic stage lighting, uplighting, strobes, and fog machines to create the perfect atmosphere for any performance or occasion.</p>
+                        </div>
+                        <div class="bg-dark-gray p-6 rounded-lg border-l-4 border-main-red shadow-lg">
+                            <h3 class="text-xl font-bold mb-2 text-white">Mixing Consoles & More</h3>
+                            <p class="text-gray-400">Digital and analog mixers, DJ equipment, monitors, and all the necessary cabling and stands to tie your system together.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing Section -->
+            <section class="text-center py-16 px-6">
+                <h2 class="text-3xl font-bold text-main-red mb-4">Flexible Packages</h2>
+                <p class="max-w-2xl mx-auto text-lg text-gray-300 mb-8">
+                    Our rental packages are tailored to your needs. Pricing starts at $500 and can range up to $2000+ depending on the scale of your event.
+                </p>
+                <a href="#contact" class="inline-block bg-main-red text-white font-bold py-3 px-8 rounded-lg text-lg uppercase tracking-wider hover-bg-dark-red transition-colors duration-300">
+                    Get a Custom Quote
+                </a>
+            </section>
+        </div>
+
+        <!-- Contact Page Section -->
+        <div id="contact" class="page">
+             <section class="py-16 px-6 text-center min-h-[60vh] flex flex-col items-center justify-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-main-red mb-4">Get in Touch</h1>
+                <p class="max-w-2xl mx-auto text-lg text-gray-300 mb-8">
+                    Ready to plan your event? Reach out to us for a personalized quote. We're here to help you find the perfect audio and lighting solution.
+                </p>
+                <div class="bg-mid-gray p-8 rounded-lg shadow-lg">
+                    <div class="mb-6">
+                        <h3 class="text-xl font-bold text-main-red mb-2">Email for a Quote</h3>
+                        <a href="mailto:quotes@redsound.events" class="text-lg text-white hover:text-main-red transition-colors">quotes@redsound.events</a>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-main-red mb-2">Call or Text</h3>
+                        <a href="tel:+14089135606" class="text-lg text-white hover:text-main-red transition-colors">(408) 913-5606</a>
+                    </div>
+                </div>
+                 <a href="#home" class="mt-12 text-gray-400 hover:text-main-red transition-colors">&larr; Back to Home</a>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-header-footer text-center py-6 text-gray-500">
+        <p>&copy; 2024 Red Sound | <a href="#contact" class="hover:text-main-red transition-colors">Contact Us</a></p>
+    </footer>
+
+    <script>
+        // Simple client-side router
+        const pages = document.querySelectorAll('.page');
+        const homePage = document.getElementById('home');
+        const contactPage = document.getElementById('contact');
+
+        function updatePage() {
+            // Get the hash from the URL, remove the '#'
+            const route = window.location.hash.substring(1);
+
+            // Hide all pages by default
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show the correct page based on the hash
+            if (route === 'contact') {
+                contactPage.classList.add('active');
+            } else {
+                // If the hash is anything else (#home, empty, or invalid), show home.
+                homePage.classList.add('active');
+            }
+        }
+
+        // Listen for when the URL hash changes (e.g., a link is clicked)
+        window.addEventListener('hashchange', updatePage);
+
+        // Run the function once on page load to set the initial state
+        document.addEventListener('DOMContentLoaded', updatePage);
+    </script>
+
+</body>
+</html>
+
