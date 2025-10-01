@@ -511,6 +511,7 @@
         }
 
         // Booking Page Logic
+        let bookingPageInitialized = false;
         function initializeBookingPage() {
             const authSection = document.getElementById('auth-section');
             const loginForm = document.getElementById('login-form');
@@ -518,11 +519,25 @@
             const bookingFormSection = document.getElementById('booking-form-section');
             const packageSummary = document.getElementById('package-summary');
             const submitBtn = document.getElementById('submit-booking');
+            const eventDateInput = document.getElementById('event-date');
 
-            // Auth buttons
-            document.getElementById('login-btn').addEventListener('click', handleLogin);
-            document.getElementById('register-btn').addEventListener('click', handleRegister);
-            document.getElementById('logout-btn').addEventListener('click', handleLogout);
+            // Only add event listeners once
+            if (!bookingPageInitialized) {
+                // Auth buttons
+                document.getElementById('login-btn').addEventListener('click', handleLogin);
+                document.getElementById('register-btn').addEventListener('click', handleRegister);
+                document.getElementById('logout-btn').addEventListener('click', handleLogout);
+
+                // Enable submit button when date is selected
+                eventDateInput.addEventListener('change', function() {
+                    submitBtn.disabled = !this.value;
+                });
+
+                // Submit booking
+                submitBtn.addEventListener('click', handleBookingSubmit);
+                
+                bookingPageInitialized = true;
+            }
 
             // Update UI based on auth state
             updateAuthUI();
@@ -533,14 +548,11 @@
                 packageSummary.classList.remove('hidden');
                 displayPackageSummary();
                 
-                // Enable submit button when date is selected
-                document.getElementById('event-date').addEventListener('change', function() {
-                    submitBtn.disabled = !this.value;
-                });
+                // Check if date is already filled and enable button
+                if (eventDateInput.value) {
+                    submitBtn.disabled = false;
+                }
             }
-
-            // Submit booking
-            submitBtn.addEventListener('click', handleBookingSubmit);
         }
 
         function handleLogin() {
