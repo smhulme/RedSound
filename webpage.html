@@ -28,6 +28,23 @@
         .page.active {
             display: block;
         }
+
+        /* Package and addon selection */
+        .package-option:hover,
+        .addon-option:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Checkbox styling */
+        .addon-checkbox {
+            accent-color: #e53935;
+        }
+
+        /* Input field styling */
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+        }
     </style>
 </head>
 <body class="bg-dark-gray text-gray-200">
@@ -78,13 +95,55 @@
 
             <!-- Pricing Section -->
             <section class="text-center py-16 px-6">
-                <h2 class="text-3xl font-bold text-main-red mb-4">Flexible Packages</h2>
+                <h2 class="text-3xl font-bold text-main-red mb-4">Our Packages</h2>
                 <p class="max-w-2xl mx-auto text-lg text-gray-300 mb-8">
-                    Our rental packages are tailored to your needs. Pricing starts at $500 and can range up to $2000+ depending on the scale of your event.
+                    Choose from three professional packages tailored to your needs, with options to customize with add-ons.
                 </p>
-                <a href="#contact" class="inline-block bg-main-red text-white font-bold py-3 px-8 rounded-lg text-lg uppercase tracking-wider hover-bg-dark-red transition-colors duration-300">
-                    Get a Custom Quote
-                </a>
+                <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 mb-8">
+                    <!-- Base Package -->
+                    <div class="bg-mid-gray p-8 rounded-lg border-2 border-gray-600 hover:border-main-red transition-colors">
+                        <h3 class="text-2xl font-bold text-white mb-2">Base</h3>
+                        <p class="text-4xl font-bold text-main-red mb-4">$300</p>
+                        <ul class="text-left text-gray-300 mb-6 space-y-2">
+                            <li>✓ 2 Monitors</li>
+                            <li>✓ 2 Microphones</li>
+                            <li>✓ Basic Setup</li>
+                        </ul>
+                        <a href="#packages" class="inline-block bg-main-red text-white font-bold py-2 px-6 rounded-lg hover-bg-dark-red transition-colors duration-300">
+                            Select & Customize
+                        </a>
+                    </div>
+                    <!-- Premium Package -->
+                    <div class="bg-mid-gray p-8 rounded-lg border-2 border-main-red transform scale-105">
+                        <div class="bg-main-red text-white text-sm font-bold py-1 px-3 rounded-full inline-block mb-2">POPULAR</div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Premium</h3>
+                        <p class="text-4xl font-bold text-main-red mb-4">$800</p>
+                        <ul class="text-left text-gray-300 mb-6 space-y-2">
+                            <li>✓ Everything in Base</li>
+                            <li>✓ Subwoofers</li>
+                            <li>✓ Additional Microphones</li>
+                            <li>✓ Onsite Technician</li>
+                        </ul>
+                        <a href="#packages" class="inline-block bg-main-red text-white font-bold py-2 px-6 rounded-lg hover-bg-dark-red transition-colors duration-300">
+                            Select & Customize
+                        </a>
+                    </div>
+                    <!-- Pro Package -->
+                    <div class="bg-mid-gray p-8 rounded-lg border-2 border-gray-600 hover:border-main-red transition-colors">
+                        <h3 class="text-2xl font-bold text-white mb-2">Pro</h3>
+                        <p class="text-4xl font-bold text-main-red mb-4">$2000</p>
+                        <ul class="text-left text-gray-300 mb-6 space-y-2">
+                            <li>✓ Everything Available</li>
+                            <li>✓ Full Speaker Arrays</li>
+                            <li>✓ Complete Lighting Setup</li>
+                            <li>✓ All Equipment Included</li>
+                            <li class="text-gray-500">✗ Labor Not Included</li>
+                        </ul>
+                        <a href="#packages" class="inline-block bg-main-red text-white font-bold py-2 px-6 rounded-lg hover-bg-dark-red transition-colors duration-300">
+                            Select & Customize
+                        </a>
+                    </div>
+                </div>
             </section>
         </div>
 
@@ -109,6 +168,218 @@
             </section>
         </div>
 
+        <!-- Packages Page Section -->
+        <div id="packages" class="page">
+            <section class="py-16 px-6">
+                <h1 class="text-4xl font-bold text-center text-main-red mb-8">Customize Your Package</h1>
+                <div class="max-w-6xl mx-auto">
+                    <!-- Package Selection -->
+                    <div class="bg-mid-gray p-6 rounded-lg mb-8">
+                        <h2 class="text-2xl font-bold text-white mb-4">Select Your Base Package</h2>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="package-option bg-dark-gray p-4 rounded border-2 border-gray-600 cursor-pointer hover:border-main-red transition-colors" data-package="base" data-price="300">
+                                <h3 class="text-xl font-bold text-main-red mb-2">Base - $300</h3>
+                                <ul class="text-sm text-gray-300 space-y-1">
+                                    <li>✓ 2 Monitors</li>
+                                    <li>✓ 2 Microphones</li>
+                                </ul>
+                            </div>
+                            <div class="package-option bg-dark-gray p-4 rounded border-2 border-gray-600 cursor-pointer hover:border-main-red transition-colors" data-package="premium" data-price="800">
+                                <h3 class="text-xl font-bold text-main-red mb-2">Premium - $800</h3>
+                                <ul class="text-sm text-gray-300 space-y-1">
+                                    <li>✓ Base Package</li>
+                                    <li>✓ Subwoofers</li>
+                                    <li>✓ Extra Microphones</li>
+                                    <li>✓ Onsite Technician</li>
+                                </ul>
+                            </div>
+                            <div class="package-option bg-dark-gray p-4 rounded border-2 border-gray-600 cursor-pointer hover:border-main-red transition-colors" data-package="pro" data-price="2000">
+                                <h3 class="text-xl font-bold text-main-red mb-2">Pro - $2000</h3>
+                                <ul class="text-sm text-gray-300 space-y-1">
+                                    <li>✓ Everything Available</li>
+                                    <li>✓ Full Equipment</li>
+                                    <li>✗ Labor Not Included</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add-ons Section -->
+                    <div class="bg-mid-gray p-6 rounded-lg mb-8">
+                        <h2 class="text-2xl font-bold text-white mb-4">Available Add-ons</h2>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <label class="addon-option bg-dark-gray p-4 rounded border-2 border-gray-600 cursor-pointer hover:border-main-red transition-colors flex items-center">
+                                <input type="checkbox" class="addon-checkbox mr-3 w-5 h-5" data-addon="extra-speakers" data-price="150">
+                                <div>
+                                    <div class="font-bold text-white">Extra Speakers</div>
+                                    <div class="text-sm text-gray-400">+$150</div>
+                                </div>
+                            </label>
+                            <label class="addon-option bg-dark-gray p-4 rounded border-2 border-gray-600 cursor-pointer hover:border-main-red transition-colors flex items-center">
+                                <input type="checkbox" class="addon-checkbox mr-3 w-5 h-5" data-addon="wireless-mics" data-price="100">
+                                <div>
+                                    <div class="font-bold text-white">Wireless Microphones</div>
+                                    <div class="text-sm text-gray-400">+$100</div>
+                                </div>
+                            </label>
+                            <label class="addon-option bg-dark-gray p-4 rounded border-2 border-gray-600 cursor-pointer hover:border-main-red transition-colors flex items-center">
+                                <input type="checkbox" class="addon-checkbox mr-3 w-5 h-5" data-addon="lighting" data-price="200">
+                                <div>
+                                    <div class="font-bold text-white">Stage Lighting</div>
+                                    <div class="text-sm text-gray-400">+$200</div>
+                                </div>
+                            </label>
+                            <label class="addon-option bg-dark-gray p-4 rounded border-2 border-gray-600 cursor-pointer hover:border-main-red transition-colors flex items-center">
+                                <input type="checkbox" class="addon-checkbox mr-3 w-5 h-5" data-addon="fog-machine" data-price="75">
+                                <div>
+                                    <div class="font-bold text-white">Fog Machine</div>
+                                    <div class="text-sm text-gray-400">+$75</div>
+                                </div>
+                            </label>
+                            <label class="addon-option bg-dark-gray p-4 rounded border-2 border-gray-600 cursor-pointer hover:border-main-red transition-colors flex items-center">
+                                <input type="checkbox" class="addon-checkbox mr-3 w-5 h-5" data-addon="dj-table" data-price="50">
+                                <div>
+                                    <div class="font-bold text-white">DJ Table</div>
+                                    <div class="text-sm text-gray-400">+$50</div>
+                                </div>
+                            </label>
+                            <label class="addon-option bg-dark-gray p-4 rounded border-2 border-gray-600 cursor-pointer hover:border-main-red transition-colors flex items-center">
+                                <input type="checkbox" class="addon-checkbox mr-3 w-5 h-5" data-addon="extra-monitors" data-price="100">
+                                <div>
+                                    <div class="font-bold text-white">Extra Monitors</div>
+                                    <div class="text-sm text-gray-400">+$100</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Price Summary and Continue -->
+                    <div class="bg-mid-gray p-6 rounded-lg">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-2xl font-bold text-white">Total Price</h3>
+                            <p id="total-price" class="text-3xl font-bold text-main-red">$0</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <button id="continue-to-booking" class="flex-1 bg-main-red text-white font-bold py-3 px-8 rounded-lg hover-bg-dark-red transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                                Continue to Booking
+                            </button>
+                            <a href="#home" class="flex-1 text-center bg-gray-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-gray-700 transition-colors duration-300">
+                                Back to Home
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Booking Page Section -->
+        <div id="booking" class="page">
+            <section class="py-16 px-6">
+                <h1 class="text-4xl font-bold text-center text-main-red mb-8">Book Your Event</h1>
+                <div class="max-w-4xl mx-auto">
+                    <!-- Login/Register Section -->
+                    <div id="auth-section" class="bg-mid-gray p-6 rounded-lg mb-8">
+                        <div id="login-form">
+                            <h2 class="text-2xl font-bold text-white mb-4">Login or Register</h2>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-gray-300 mb-2">Email</label>
+                                    <input type="email" id="auth-email" class="w-full p-3 rounded bg-dark-gray text-white border border-gray-600 focus:border-main-red outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-300 mb-2">Password</label>
+                                    <input type="password" id="auth-password" class="w-full p-3 rounded bg-dark-gray text-white border border-gray-600 focus:border-main-red outline-none">
+                                </div>
+                                <div class="flex gap-4">
+                                    <button id="login-btn" class="flex-1 bg-main-red text-white font-bold py-3 px-6 rounded-lg hover-bg-dark-red transition-colors">
+                                        Login
+                                    </button>
+                                    <button id="register-btn" class="flex-1 bg-gray-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-700 transition-colors">
+                                        Register
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="user-info" class="hidden">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h3 class="text-xl font-bold text-white">Welcome, <span id="user-email-display"></span></h3>
+                                </div>
+                                <button id="logout-btn" class="bg-gray-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors">
+                                    Logout
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Booking Form -->
+                    <div id="booking-form-section" class="bg-mid-gray p-6 rounded-lg mb-8 hidden">
+                        <h2 class="text-2xl font-bold text-white mb-4">Select Event Date</h2>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-gray-300 mb-2">Event Date</label>
+                                <input type="date" id="event-date" class="w-full p-3 rounded bg-dark-gray text-white border border-gray-600 focus:border-main-red outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-gray-300 mb-2">Event Name</label>
+                                <input type="text" id="event-name" class="w-full p-3 rounded bg-dark-gray text-white border border-gray-600 focus:border-main-red outline-none" placeholder="Wedding, Concert, etc.">
+                            </div>
+                            <div>
+                                <label class="block text-gray-300 mb-2">Additional Notes</label>
+                                <textarea id="event-notes" rows="4" class="w-full p-3 rounded bg-dark-gray text-white border border-gray-600 focus:border-main-red outline-none" placeholder="Any special requirements or notes..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Package Summary -->
+                    <div id="package-summary" class="bg-mid-gray p-6 rounded-lg mb-8 hidden">
+                        <h2 class="text-2xl font-bold text-white mb-4">Your Package Summary</h2>
+                        <div id="summary-content" class="text-gray-300 space-y-2 mb-4"></div>
+                        <div class="border-t border-gray-600 pt-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-xl font-bold text-white">Total Price:</span>
+                                <span id="summary-price" class="text-2xl font-bold text-main-red">$0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex gap-4">
+                        <button id="submit-booking" class="flex-1 bg-main-red text-white font-bold py-3 px-8 rounded-lg hover-bg-dark-red transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                            Confirm Booking
+                        </button>
+                        <a href="#packages" class="flex-1 text-center bg-gray-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-gray-700 transition-colors duration-300">
+                            Back to Packages
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Confirmation Page Section -->
+        <div id="confirmation" class="page">
+            <section class="py-16 px-6 text-center">
+                <div class="max-w-2xl mx-auto">
+                    <div class="text-6xl mb-4">✓</div>
+                    <h1 class="text-4xl font-bold text-main-red mb-4">Booking Confirmed!</h1>
+                    <p class="text-lg text-gray-300 mb-8">
+                        Thank you for your booking. Your event details have been saved and sent to our admin team. We'll contact you shortly to confirm all the details.
+                    </p>
+                    <div class="bg-mid-gray p-6 rounded-lg mb-8">
+                        <h3 class="text-xl font-bold text-white mb-4">What's Next?</h3>
+                        <ul class="text-left text-gray-300 space-y-2">
+                            <li>✓ You'll receive a confirmation email shortly</li>
+                            <li>✓ Our team will review your booking</li>
+                            <li>✓ We'll contact you within 24 hours to finalize details</li>
+                        </ul>
+                    </div>
+                    <a href="#home" class="inline-block bg-main-red text-white font-bold py-3 px-8 rounded-lg hover-bg-dark-red transition-colors duration-300">
+                        Return to Home
+                    </a>
+                </div>
+            </section>
+        </div>
+
     </main>
 
     <!-- Footer -->
@@ -121,6 +392,24 @@
         const pages = document.querySelectorAll('.page');
         const homePage = document.getElementById('home');
         const contactPage = document.getElementById('contact');
+        const packagesPage = document.getElementById('packages');
+        const bookingPage = document.getElementById('booking');
+        const confirmationPage = document.getElementById('confirmation');
+
+        // State management
+        let selectedPackage = null;
+        let selectedAddons = [];
+        let currentUser = null;
+        let bookingData = null;
+
+        // Initialize from localStorage
+        function initializeApp() {
+            const savedUser = localStorage.getItem('currentUser');
+            if (savedUser) {
+                currentUser = JSON.parse(savedUser);
+                updateAuthUI();
+            }
+        }
 
         function updatePage() {
             // Get the hash from the URL, remove the '#'
@@ -132,17 +421,277 @@
             // Show the correct page based on the hash
             if (route === 'contact') {
                 contactPage.classList.add('active');
+            } else if (route === 'packages') {
+                packagesPage.classList.add('active');
+                initializePackagesPage();
+            } else if (route === 'booking') {
+                bookingPage.classList.add('active');
+                initializeBookingPage();
+            } else if (route === 'confirmation') {
+                confirmationPage.classList.add('active');
             } else {
                 // If the hash is anything else (#home, empty, or invalid), show home.
                 homePage.classList.add('active');
             }
         }
 
+        // Packages Page Logic
+        function initializePackagesPage() {
+            const packageOptions = document.querySelectorAll('.package-option');
+            const addonCheckboxes = document.querySelectorAll('.addon-checkbox');
+            const totalPriceEl = document.getElementById('total-price');
+            const continueBtn = document.getElementById('continue-to-booking');
+
+            // Package selection
+            packageOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    packageOptions.forEach(opt => opt.classList.remove('border-main-red'));
+                    packageOptions.forEach(opt => opt.classList.add('border-gray-600'));
+                    this.classList.remove('border-gray-600');
+                    this.classList.add('border-main-red');
+                    
+                    selectedPackage = {
+                        name: this.dataset.package,
+                        price: parseInt(this.dataset.price)
+                    };
+                    updateTotalPrice();
+                });
+            });
+
+            // Addon selection
+            addonCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    if (this.checked) {
+                        selectedAddons.push({
+                            name: this.dataset.addon,
+                            price: parseInt(this.dataset.price)
+                        });
+                    } else {
+                        selectedAddons = selectedAddons.filter(a => a.name !== this.dataset.addon);
+                    }
+                    updateTotalPrice();
+                });
+            });
+
+            function updateTotalPrice() {
+                let total = 0;
+                if (selectedPackage) {
+                    total += selectedPackage.price;
+                }
+                selectedAddons.forEach(addon => {
+                    total += addon.price;
+                });
+                totalPriceEl.textContent = '$' + total;
+                continueBtn.disabled = !selectedPackage;
+            }
+
+            continueBtn.addEventListener('click', function() {
+                if (selectedPackage) {
+                    bookingData = {
+                        package: selectedPackage,
+                        addons: [...selectedAddons],
+                        totalPrice: calculateTotalPrice()
+                    };
+                    window.location.hash = 'booking';
+                }
+            });
+
+            // Reset to current state if coming back
+            if (selectedPackage) {
+                updateTotalPrice();
+            }
+        }
+
+        function calculateTotalPrice() {
+            let total = selectedPackage ? selectedPackage.price : 0;
+            selectedAddons.forEach(addon => {
+                total += addon.price;
+            });
+            return total;
+        }
+
+        // Booking Page Logic
+        function initializeBookingPage() {
+            const authSection = document.getElementById('auth-section');
+            const loginForm = document.getElementById('login-form');
+            const userInfo = document.getElementById('user-info');
+            const bookingFormSection = document.getElementById('booking-form-section');
+            const packageSummary = document.getElementById('package-summary');
+            const submitBtn = document.getElementById('submit-booking');
+
+            // Auth buttons
+            document.getElementById('login-btn').addEventListener('click', handleLogin);
+            document.getElementById('register-btn').addEventListener('click', handleRegister);
+            document.getElementById('logout-btn').addEventListener('click', handleLogout);
+
+            // Update UI based on auth state
+            updateAuthUI();
+
+            // Show booking form and summary if user is logged in
+            if (currentUser) {
+                bookingFormSection.classList.remove('hidden');
+                packageSummary.classList.remove('hidden');
+                displayPackageSummary();
+                
+                // Enable submit button when date is selected
+                document.getElementById('event-date').addEventListener('change', function() {
+                    submitBtn.disabled = !this.value;
+                });
+            }
+
+            // Submit booking
+            submitBtn.addEventListener('click', handleBookingSubmit);
+        }
+
+        function handleLogin() {
+            const email = document.getElementById('auth-email').value;
+            const password = document.getElementById('auth-password').value;
+
+            if (!email || !password) {
+                alert('Please enter both email and password');
+                return;
+            }
+
+            // Simple auth - check if user exists in localStorage
+            const users = JSON.parse(localStorage.getItem('users') || '{}');
+            if (users[email] && users[email].password === password) {
+                currentUser = { email };
+                localStorage.setItem('currentUser', JSON.stringify(currentUser));
+                updateAuthUI();
+                document.getElementById('booking-form-section').classList.remove('hidden');
+                document.getElementById('package-summary').classList.remove('hidden');
+                displayPackageSummary();
+            } else {
+                alert('Invalid credentials. Please register if you are a new user.');
+            }
+        }
+
+        function handleRegister() {
+            const email = document.getElementById('auth-email').value;
+            const password = document.getElementById('auth-password').value;
+
+            if (!email || !password) {
+                alert('Please enter both email and password');
+                return;
+            }
+
+            // Simple registration - save to localStorage
+            const users = JSON.parse(localStorage.getItem('users') || '{}');
+            if (users[email]) {
+                alert('User already exists. Please login.');
+                return;
+            }
+
+            users[email] = { password, bookings: [] };
+            localStorage.setItem('users', JSON.stringify(users));
+            
+            currentUser = { email };
+            localStorage.setItem('currentUser', JSON.stringify(currentUser));
+            updateAuthUI();
+            document.getElementById('booking-form-section').classList.remove('hidden');
+            document.getElementById('package-summary').classList.remove('hidden');
+            displayPackageSummary();
+        }
+
+        function handleLogout() {
+            currentUser = null;
+            localStorage.removeItem('currentUser');
+            updateAuthUI();
+            document.getElementById('booking-form-section').classList.add('hidden');
+            document.getElementById('package-summary').classList.add('hidden');
+            window.location.hash = 'home';
+        }
+
+        function updateAuthUI() {
+            const loginForm = document.getElementById('login-form');
+            const userInfo = document.getElementById('user-info');
+            
+            if (currentUser) {
+                loginForm.classList.add('hidden');
+                userInfo.classList.remove('hidden');
+                document.getElementById('user-email-display').textContent = currentUser.email;
+            } else {
+                loginForm.classList.remove('hidden');
+                userInfo.classList.add('hidden');
+            }
+        }
+
+        function displayPackageSummary() {
+            if (!bookingData) return;
+
+            const summaryContent = document.getElementById('summary-content');
+            const summaryPrice = document.getElementById('summary-price');
+
+            let html = '<div class="space-y-2">';
+            html += `<div class="flex justify-between"><span>Package: ${formatPackageName(bookingData.package.name)}</span><span>$${bookingData.package.price}</span></div>`;
+            
+            if (bookingData.addons.length > 0) {
+                html += '<div class="font-bold mt-2">Add-ons:</div>';
+                bookingData.addons.forEach(addon => {
+                    html += `<div class="flex justify-between"><span>• ${formatAddonName(addon.name)}</span><span>$${addon.price}</span></div>`;
+                });
+            }
+            html += '</div>';
+
+            summaryContent.innerHTML = html;
+            summaryPrice.textContent = '$' + bookingData.totalPrice;
+        }
+
+        function formatPackageName(name) {
+            return name.charAt(0).toUpperCase() + name.slice(1);
+        }
+
+        function formatAddonName(name) {
+            return name.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+        }
+
+        function handleBookingSubmit() {
+            const eventDate = document.getElementById('event-date').value;
+            const eventName = document.getElementById('event-name').value;
+            const eventNotes = document.getElementById('event-notes').value;
+
+            if (!eventDate) {
+                alert('Please select an event date');
+                return;
+            }
+
+            const booking = {
+                ...bookingData,
+                eventDate,
+                eventName,
+                eventNotes,
+                userEmail: currentUser.email,
+                bookingDate: new Date().toISOString()
+            };
+
+            // Save to user's bookings
+            const users = JSON.parse(localStorage.getItem('users') || '{}');
+            if (users[currentUser.email]) {
+                users[currentUser.email].bookings = users[currentUser.email].bookings || [];
+                users[currentUser.email].bookings.push(booking);
+                localStorage.setItem('users', JSON.stringify(users));
+            }
+
+            // Save to admin bookings queue
+            const adminBookings = JSON.parse(localStorage.getItem('adminBookings') || '[]');
+            adminBookings.push(booking);
+            localStorage.setItem('adminBookings', JSON.stringify(adminBookings));
+
+            // Log to console for admin (simulating sending to backend)
+            console.log('NEW BOOKING FOR ADMIN:', booking);
+
+            // Navigate to confirmation
+            window.location.hash = 'confirmation';
+        }
+
         // Listen for when the URL hash changes (e.g., a link is clicked)
         window.addEventListener('hashchange', updatePage);
 
         // Run the function once on page load to set the initial state
-        document.addEventListener('DOMContentLoaded', updatePage);
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeApp();
+            updatePage();
+        });
     </script>
 
 </body>
