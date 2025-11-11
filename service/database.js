@@ -15,7 +15,7 @@ let bookingsCollection;
   try {
     await client.connect();
     console.log('Connected to MongoDB');
-    db = client.db('startup'); // Use a database named 'startup'
+    db = client.db('RedSound'); // Use a database named 'RedSound'
     usersCollection = db.collection('users');
     bookingsCollection = db.collection('bookings');
   } catch (ex) {
