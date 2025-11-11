@@ -17,7 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "cookie-parser": "^1.4.6",
+    "cookie-parser": "^1.4.7",
     "express": "^4.19.2",
     "mongodb": "^6.20.0",
     "uuid": "^10.0.0"

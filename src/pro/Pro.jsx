@@ -3,7 +3,7 @@ import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { usePackage } from '../context/PackageContext'; // Import the hook
 
-const PRO_PRICE = 1999;
+const PRO_PRICE = 4000;
 
 export default function Pro() {
   // --- NEW LOGIC ---
