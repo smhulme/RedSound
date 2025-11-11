@@ -55,9 +55,10 @@ export default function Booking() {
   // State for form inputs (Controlled Components)
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
-  const [email, setEmail] = useState('');
-  const [street, setStreet] = useState('');
+  const [zipCode, setZipCode] = useState(''); // Renamed from street
   const [comments, setComments] = useState('');
+  const [referralName, setReferralName] = useState(''); // NEW: Referral name
+  const [referralPhone, setReferralPhone] = useState(''); // NEW: Referral phone
 
   // Calendly useEffect 
   useEffect(() => {
@@ -119,7 +120,7 @@ export default function Booking() {
       // Package details from context
       package: packageReport,
       // Customer details from form
-      customer: { name, phone, email, street, comments },
+      customer: { name, phone, zipCode, referralName, referralPhone },
     };
 
     try {
@@ -211,38 +212,37 @@ export default function Booking() {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="email" className="form-label text-light">Email:</label>
-            <input 
-              type="email" 
-              className="form-control" 
-              id="email" 
-              name="email" 
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="street" className="form-label text-light">Street Address:</label>
+            <label htmlFor="zipCode" className="form-label text-light">Event Zip-Code:</label>
             <input 
               type="text" 
               className="form-control" 
-              id="street" 
-              name="street" 
+              id="zipCode" 
+              name="zipCode" 
               required
-              value={street}
-              onChange={(e) => setStreet(e.target.value)}
+              value={zipCode}
+              onChange={(e) => setZipCode(e.target.value)}
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="comments" className="form-label text-light">Comments:</label>
+            <label htmlFor="referralName" className="form-label text-light">Name of Referral:</label>
             <input 
               type="text" 
               className="form-control" 
-              id="comments" 
-              name="comments"
-              value={comments}
-              onChange={(e) => setComments(e.target.value)}
+              id="referralName" 
+              name="referralName"
+              value={referralName}
+              onChange={(e) => setReferralName(e.target.value)}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="referralPhone" className="form-label text-light">Phone Number of Referral:</label>
+            <input 
+              type="tel" 
+              className="form-control" 
+              id="referralPhone" 
+              name="referralPhone"
+              value={referralPhone}
+              onChange={(e) => setReferralPhone(e.target.value)}
             />
           </div>
           <button type="submit" className="btn btn-danger w-100">

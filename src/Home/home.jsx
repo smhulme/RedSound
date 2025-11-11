@@ -14,9 +14,6 @@ export default function Home() {
         </nav>
       </header>
       <main className="bg-dark text-red text-center">
-        <a href="https://github.com/smhulme/startup.git" target="_blank" rel="noopener noreferrer">
-          https://github.com/smhulme/startup.git
-        </a>
         <h2>Professional Audio Solutions for All Events</h2>
         <p>
           From intimate gatherings like weddings and parties to large events including concerts and festivals, we have you covered.
