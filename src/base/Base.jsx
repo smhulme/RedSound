@@ -11,6 +11,7 @@ const ADDONS = [
   { id: 'addon4', name: 'On-site Technician', price: 200, max: 1 },
   { id: 'addon5', name: 'Subwoofer', price: 100, max: 2 },
   { id: 'addon6', name: 'Speaker Upgrade', price: 150, max: 2 },
+  { id: 'addon7', name: '14x8 Indoor/Outdoor Screen + Projector', price: 1000, max: 2 },
 ];
 
 const BASE_PRICE = 399;

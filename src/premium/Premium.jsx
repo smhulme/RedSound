@@ -12,6 +12,7 @@ const ADDONS = [
   { id: 'addon5', name: 'Concert Mic Setup (per performer)', price: 80, max: 8 },
   { id: 'addon6', name: 'Fog Machine', price: 50, max: 1 },
   { id: 'addon7', name: 'Concert Audio Mixer', price: 150, max: 1 },
+  { id: 'addon8', name: '14x8 Indoor/Outdoor Screen + Projector', price: 1000, max: 2 },
 ];
 
 const PREMIUM_PRICE = 899;
