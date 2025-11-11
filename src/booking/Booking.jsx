@@ -200,7 +200,7 @@ export default function Booking() {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="phone" className="form-label text-light">Phone Number:</label>
+            <label htmlFor="phone" className="form-label text-light">Phone Number (same as above):</label>
             <input 
               type="tel" 
               className="form-control" 

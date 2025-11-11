@@ -51,7 +51,7 @@ export default function Home() {
                 All Ad-Ons Included
               </div>
               <h4>Suitable for Small Concerts</h4>
-              <h3>$1999</h3>
+              <h3>$4000</h3>
             </NavLink>
           </div>
         </div>
