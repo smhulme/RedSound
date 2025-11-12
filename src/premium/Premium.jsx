@@ -15,7 +15,7 @@ const ADDONS = [
   { id: 'addon8', name: '14x8 Indoor/Outdoor Screen + Projector', price: 1000, max: 2 },
 ];
 
-const PREMIUM_PRICE = 899;
+const PREMIUM_PRICE = 799;
 
 export default function Premium() {
   const [counts, setCounts] = useState(Array(ADDONS.length).fill(0));
@@ -56,7 +56,7 @@ export default function Premium() {
     };
 
     setPackageSpec(spec);
-    navigate('/login');
+    navigate('/booking'); // Go directly to booking
   };
 
   return (

@@ -2,6 +2,7 @@ const cookieParser = require('cookie-parser');
 const bcrypt = require('bcryptjs');
 const express = require('express');
 const uuid = require('uuid');
+const { ObjectId } = require('mongodb');
 const app = express();
 const DB = require('./database.js'); // <-- Import the new database module
 
@@ -84,10 +85,9 @@ apiRouter.get('/user/me', verifyAuth, (req, res) => {
 });
 
 // POST /api/booking: Submit a new booking
-apiRouter.post('/booking', verifyAuth, async (req, res) => {
+apiRouter.post('/booking', async (req, res) => {
   const bookingData = {
     ...req.body,
-    bookedBy: req.user.username, // Add the authenticated user
     timestamp: new Date()
   };
 
@@ -98,6 +98,31 @@ apiRouter.post('/booking', verifyAuth, async (req, res) => {
   } catch (error) {
     console.error('Failed to save booking:', error);
     res.status(500).send({ msg: 'Failed to save booking' });
+  }
+});
+
+// GET /api/bookings: Get all bookings (employee dashboard)
+apiRouter.get('/bookings', verifyAuth, async (req, res) => {
+  try {
+    const bookings = await DB.getAllBookings();
+    res.json(bookings);
+  } catch (error) {
+    console.error('Failed to fetch bookings:', error);
+    res.status(500).send({ msg: 'Failed to fetch bookings' });
+  }
+});
+
+// DELETE /api/bookings/:id (requires authentication)
+apiRouter.delete('/bookings/:id', verifyAuth, async (req, res) => {
+  try {
+    const result = await DB.deleteBooking(req.params.id);
+    if (result.deletedCount === 1) {
+      res.sendStatus(204);
+    } else {
+      res.status(404).send({ msg: 'Booking not found' });
+    }
+  } catch (error) {
+    res.status(500).send({ msg: 'Failed to delete booking' });
   }
 });
 

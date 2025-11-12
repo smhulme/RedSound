@@ -12,9 +12,10 @@ const ADDONS = [
   { id: 'addon5', name: 'Subwoofer', price: 100, max: 2 },
   { id: 'addon6', name: 'Speaker Upgrade', price: 150, max: 2 },
   { id: 'addon7', name: '14x8 Indoor/Outdoor Screen + Projector', price: 1000, max: 2 },
+  { id: 'addon8', name: 'Fog Machine', price: 50, max: 1 },
 ];
 
-const BASE_PRICE = 399;
+const BASE_PRICE = 299;
 
 export default function Base() {
   const [counts, setCounts] = useState(Array(ADDONS.length).fill(0));
@@ -55,7 +56,7 @@ export default function Base() {
     };
 
     setPackageSpec(spec);
-    navigate('/login');
+    navigate('/booking'); // Go directly to booking
   };
 
   return (

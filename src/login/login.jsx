@@ -48,16 +48,16 @@ export default function Login() {
   }
 
   // --- WRAPPER FUNCTIONS (matching the requested style) ---
-  const handleLogin = (e) => {
-    e.preventDefault(); 
-    // Call the consolidated function for login
-    handleAuth('PUT'); 
-  };
+  // const handleLogin = (e) => {
+  //   e.preventDefault(); 
+  //   // Call the consolidated function for login
+  //   handleAuth('PUT'); 
+  // };
 
-  const handleRegister = () => {
-    // Call the consolidated function for registration
-    handleAuth('POST');
-  };
+  // const handleRegister = () => {
+  //   // Call the consolidated function for registration
+  //   handleAuth('POST');
+  // };
 
   return (
     <>
@@ -76,46 +76,11 @@ export default function Login() {
       {/* --- MAIN CONTENT --- */}
       <main className="bg-dark text-red text-center py-4">
         <h1>Account Access</h1>
-        <form className="login-form mx-auto" style={{maxWidth: "400px"}} onSubmit={handleLogin}>
-          <div className="mb-3">
-            <label htmlFor="username" className="form-label text-light">Username</label>
-            <input 
-              type="text" 
-              className="form-control" 
-              id="username" 
-              name="username" 
-              placeholder="Enter username" 
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="password" className="form-label text-light">Password</label>
-            <input 
-              type="password" 
-              className="form-control" 
-              id="password" 
-              name="password" 
-              placeholder="Enter password" 
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          {/* Use onClick and rely on the form onSubmit handler calling handleLogin */}
-          <button type="submit" className="btn btn-danger w-100 mb-3" disabled={!(username && password)}>
-            Login
-          </button>
-          
-          {/* Use onClick and prevent default form submission */}
-          <button 
-            type="button" 
-            className="btn btn-outline-danger w-100" 
-            onClick={handleRegister}
-            disabled={!(username && password)}
-          >
-            Register New Account
-          </button>
-        </form>
+        {/* Login and registration are currently disabled. Please proceed to booking. */}
+        <div className="alert alert-info bg-secondary text-white mx-auto" style={{maxWidth: "400px"}}>
+          Login and registration are currently disabled.<br />
+          Please proceed to the booking page to submit your event information.
+        </div>
       </main>
 
       {/* --- FOOTER --- */}

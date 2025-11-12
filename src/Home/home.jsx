@@ -28,7 +28,7 @@ export default function Home() {
                 Included Set-Up and Take-Down
               </div>
               <h4>Bang For Your Buck</h4>
-              <h3>$399</h3>
+              <h3>$299</h3>
             </NavLink>
           </div>
           <div className="package-box">
@@ -40,7 +40,7 @@ export default function Home() {
                 Two Microphones
               </div>
               <h4>Take your small event to the next level</h4>
-              <h3>$899</h3>
+              <h3>$799</h3>
             </NavLink>
           </div>
           <div className="package-box">
@@ -57,7 +57,12 @@ export default function Home() {
         </div>
       </main>
       <footer className="bg-black text-red py-3 text-center">
-        © 2025 Red Sound. All rights reserved.
+        <NavLink to="/employee-login" className="text-red text-decoration-none" style={{ fontSize: "0.9rem" }}>
+          Employee Access
+        </NavLink>
+        <div style={{ marginTop: "5px" }}>
+          © 2025 Red Sound. All rights reserved.
+        </div>
       </footer>
     </>
   );

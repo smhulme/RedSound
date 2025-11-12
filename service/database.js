@@ -58,10 +58,20 @@ async function addBooking(bookingData) {
   return result;
 }
 
+async function getAllBookings() {
+  return bookingsCollection.find({}).sort({ timestamp: -1 }).toArray();
+}
+
+async function deleteBooking(id) {
+  return bookingsCollection.deleteOne({ _id: require('mongodb').ObjectId(id) });
+}
+
 module.exports = {
   getUser,
   getUserByToken,
   createUser,
   updateUserToken,
   addBooking,
+  getAllBookings,
+  deleteBooking,
 };

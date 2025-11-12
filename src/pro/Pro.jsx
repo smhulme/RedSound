@@ -23,7 +23,7 @@ export default function Pro() {
     };
 
     setPackageSpec(spec);
-    navigate('/login');
+    navigate('/booking'); // Go directly to booking
   };
 
   return (
