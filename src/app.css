@@ -1,5 +1,24 @@
+/* Global Reset & Full Height */
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000;
+  /* Ensure background is black to hide any gaps */
+}
+
+body {
+  overflow-x: hidden;
+  /* Prevent unwanted horizontal scroll */
+}
+
 .body {
   display: flex;
   flex-direction: column;
-  min-width: 375px;
+  min-height: 100vh;
+  width: 100%;
+  /* min-width: 375px; Removed to prevent forcing width on very small screens */
 }

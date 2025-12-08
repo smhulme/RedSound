@@ -1,73 +1,65 @@
-body {
-    background-color: rgb(0, 0, 0);
-    color: rgba(231, 37, 38);
-    text-align: center;
-}
-
 .main-box {
-    background: #949494;
-    border-radius: 16px;
-    padding: 30px;
-    margin: 30px auto 20px auto;
-    width: 60%;
-    min-height: 120px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background: #949494;
+  border-radius: 16px;
+  padding: 30px;
+  margin: 30px auto 20px auto;
+  width: 60%;
+  min-height: 120px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .item-row {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.item-box, .addon-box {
-    background: #333;
-    color: #fff;
-    padding: 10px 18px;
-    border-radius: 8px;
-    min-width: 120px;
-    text-align: center;
-    margin: 5px;
-    cursor: grab;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+.item-box,
+.addon-box {
+  background: #333;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  min-width: 120px;
+  text-align: center;
+  margin: 5px;
+  cursor: grab;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
 }
 
 .addon-pool {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-    margin-top: 40px;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 40px;
+  flex-wrap: wrap;
 }
 
 nav a {
   text-decoration: none;
-  background-color: #333;     
-  border-radius: 8px;          
-  padding: 10px 15px;          
-  display: inline-block;       
-  margin: 8px; 
+  background-color: #333;
+  border-radius: 8px;
+  padding: 10px 15px;
+  display: inline-block;
+  margin: 8px;
   color: rgba(231, 37, 38);
 }
 
 nav a:hover {
-    background-color: rgba(231, 37, 38);
-    color: #333;
+  background-color: rgba(231, 37, 38);
+  color: #333;
 }
 
 .bg-secondary {
-    background-color: #333 !important;
+  background-color: #333 !important;
 }
 
 @media (max-width: 600px) {
-  body {
-    padding: 0 4px;
-    font-size: 1em;
-  }
+
 
   .main-box {
     width: 70%;
@@ -81,7 +73,8 @@ nav a:hover {
     align-items: stretch;
   }
 
-  .item-box, .addon-box {
+  .item-box,
+  .addon-box {
     min-width: 0;
     width: 90%;
     box-sizing: border-box;
@@ -113,7 +106,10 @@ nav a:hover {
     box-sizing: border-box;
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-size: 1.2em;
     margin: 10px 0;
   }
