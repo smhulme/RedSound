@@ -8,6 +8,7 @@ import Booking from './booking/Booking.jsx';
 import Login from './login/login.jsx';
 import EmployeeLogin from './employee/EmployeeLogin.jsx';
 import EmployeeBookings from './employee/EmployeeBookings.jsx';
+import Contact from './Contact.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
 
@@ -31,9 +32,12 @@ export default function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/employee-login" element={<EmployeeLogin />} />
             <Route path="/employee" element={<EmployeeBookings />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
-          <footer className="bg-dark text-white-50">
-            <div className="container-fluid">
+          <footer className="bg-dark text-white-50 mt-auto">
+            <div className="container-fluid py-3 text-center">
+              <span>© 2025 Red Sound. All rights reserved. | </span>
+              <NavLink to="/contact" className="text-info text-decoration-underline">Contact Us</NavLink>
             </div>
           </footer>
         </div>

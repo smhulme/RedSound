@@ -59,6 +59,8 @@ export default function Booking() {
   const [comments, setComments] = useState('');
   const [referralName, setReferralName] = useState(''); // NEW: Referral name
   const [referralPhone, setReferralPhone] = useState(''); // NEW: Referral phone
+  // Checkbox state for calendar confirmation
+  const [calendarChecked, setCalendarChecked] = useState(false);
 
   // Calendly useEffect 
   useEffect(() => {
@@ -181,6 +183,9 @@ export default function Booking() {
           data-url="https://calendly.com/smhulme101/new-meeting?hide_event_type_details=1&background_color=000000&text_color=949494&primary_color=e72526"
           style={{ minWidth: "320px", height: "700px" }}
         ></div>
+        <p className="text-warning small mt-2 mb-4">
+          If the calendar above does not load, please reload the page.
+        </p>
         
         {/* Package Receipt */}
         <PackageReceipt />
@@ -245,7 +250,21 @@ export default function Booking() {
               onChange={(e) => setReferralPhone(e.target.value)}
             />
           </div>
-          <button type="submit" className="btn btn-danger w-100">
+          <div className="form-check mb-4 text-center">
+            <input
+              className="form-check-input me-2"
+              type="checkbox"
+              id="calendarChecked"
+              checked={calendarChecked}
+              onChange={e => setCalendarChecked(e.target.checked)}
+              required
+              style={{ transform: 'scale(1.3)', cursor: 'pointer', verticalAlign: 'middle' }}
+            />
+            <label className="form-check-label text-light fw-semibold" htmlFor="calendarChecked" style={{ cursor: 'pointer' }}>
+              I have filled out the booking calendar above
+            </label>
+          </div>
+          <button type="submit" className="btn btn-danger w-100" disabled={!calendarChecked}>
             Submit Booking
           </button>
         </form>
