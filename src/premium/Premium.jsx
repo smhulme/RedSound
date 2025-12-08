@@ -22,7 +22,7 @@ export default function Premium() {
 
   // --- NEW LOGIC ---
   const navigate = useNavigate();
-  const { setPackageSpec } = usePackage(); 
+  const { setPackageSpec } = usePackage();
 
   const handleChange = (idx, delta) => {
     setCounts(counts =>
@@ -64,7 +64,7 @@ export default function Premium() {
       {/* --- RESTORED HEADER --- */}
       <header className="bg-black">
         <NavLink to="/">
-          <img src="/Logo2-1.png" alt="Red Sound" className="img-fluid mx-auto d-block" style={{maxWidth: "150px"}} />
+          <img src="/Logo2-1.png" alt="Red Sound" className="img-fluid mx-auto d-block" style={{ maxWidth: "150px" }} />
         </NavLink>
         <nav className="text-center">
           <NavLink to="/base" className="text-red mx-2 text-decoration-none">Base</NavLink>
@@ -81,6 +81,7 @@ export default function Premium() {
             <div className="item-box">Two Premium Speakers</div>
             <div className="item-box">Two Subwoofers</div>
             <div className="item-box">Two Microphones</div>
+            <div className="item-box">Included Set-Up and Take-Down + All Cables Necessary</div>
           </div>
         </div>
         <h2>Add-ons</h2>

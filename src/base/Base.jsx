@@ -5,7 +5,7 @@ import { usePackage } from '../context/PackageContext'; // Import the hook
 import '../app.css';
 
 const ADDONS = [
-  { id: 'addon1', name: 'Extra Microphone', price: 35, max: 4 },
+  { id: 'addon1', name: 'Extra Microphone', price: 35, max: 8 },
   { id: 'addon2', name: 'Party Light Bar', price: 50, max: 8 },
   { id: 'addon3', name: 'DJ Services (per hour)', price: 100, max: 8 },
   { id: 'addon4', name: 'On-site Technician', price: 200, max: 1 },
@@ -80,7 +80,7 @@ export default function Base() {
           <div className="item-row" id="item-row">
             <div className="item-box">Two Speakers</div>
             <div className="item-box">One Microphone</div>
-            <div className="item-box">Included Set-Up and Take-Down</div>
+            <div className="item-box">Included Set-Up and Take-Down + All Cables Necessary</div>
           </div>
         </div>
         <h2>Add-ons</h2>

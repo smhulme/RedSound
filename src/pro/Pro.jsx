@@ -8,7 +8,7 @@ const PRO_PRICE = 4000;
 export default function Pro() {
   // --- NEW LOGIC ---
   const navigate = useNavigate();
-  const { setPackageSpec } = usePackage(); 
+  const { setPackageSpec } = usePackage();
 
   // --- NEW LOGIC ---
   const handlePurchase = () => {
@@ -31,7 +31,7 @@ export default function Pro() {
       {/* --- RESTORED HEADER --- */}
       <header className="bg-black">
         <NavLink to="/">
-          <img src="/Logo2-1.png" alt="Red Sound" className="img-fluid mx-auto d-block" style={{maxWidth: "150px"}} />
+          <img src="/Logo2-1.png" alt="Red Sound" className="img-fluid mx-auto d-block" style={{ maxWidth: "150px" }} />
         </NavLink>
         <nav className="text-center">
           <NavLink to="/base" className="text-red mx-2 text-decoration-none">Base</NavLink>
@@ -60,6 +60,12 @@ export default function Pro() {
           >
             <h4 style={{ margin: 0, padding: '0 10px' }}>Purchase</h4>
           </button>
+        </div>
+
+        <div className="container px-4">
+          <p className="small text-red fst-italic mx-auto" style={{ maxWidth: "600px" }}>
+            *Disclaimer: We have all audio solutions, but some additional services such as staging or truss hung lighting will cost more as we have to outsource the rental of such items.
+          </p>
         </div>
       </main>
 
