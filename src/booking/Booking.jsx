@@ -50,7 +50,7 @@ const PackageReceipt = () => {
 export default function Booking() {
   const navigate = useNavigate();
   // Get both packageSpec (for submission) and setPackageSpec (for clearing)
-  const { packageSpec, setPackageSpec } = usePackage(); 
+  const { packageSpec, setPackageSpec } = usePackage();
 
   // State for form inputs (Controlled Components)
   const [name, setName] = useState('');
@@ -61,6 +61,8 @@ export default function Booking() {
   const [referralPhone, setReferralPhone] = useState(''); // NEW: Referral phone
   // Checkbox state for calendar confirmation
   const [calendarChecked, setCalendarChecked] = useState(false);
+  // Checkbox state for deposit confirmation
+  const [depositChecked, setDepositChecked] = useState(false);
 
   // Calendly useEffect 
   useEffect(() => {
@@ -74,7 +76,7 @@ export default function Booking() {
       };
     }
   }, []);
-  
+
   // Logout Function 
   async function handleLogout() {
     try {
@@ -96,8 +98,8 @@ export default function Booking() {
     } catch (error) {
       console.error('Network error during logout:', error);
       // In case of network error, clear client state and navigate anyway
-      setPackageSpec(null); 
-      navigate('/'); 
+      setPackageSpec(null);
+      navigate('/');
     }
   }
 
@@ -141,7 +143,7 @@ export default function Booking() {
       } else if (response.status === 401) {
         alert('Your session has expired. Please log in again.');
         navigate('/login');
-      } 
+      }
       else {
         const errorText = await response.text();
         console.error('Booking failed on server:', errorText);
@@ -186,19 +188,19 @@ export default function Booking() {
         <p className="text-warning small mt-2 mb-4">
           If the calendar above does not load, please reload the page.
         </p>
-        
+
         {/* Package Receipt */}
         <PackageReceipt />
-        
+
         {/* added onSubmit and controlled inputs */}
         <form className="booking-form mx-auto" style={{ maxWidth: "400px" }} onSubmit={handleFormSubmit}>
           <div className="mb-3">
             <label htmlFor="name" className="form-label text-light">Name:</label>
-            <input 
-              type="text" 
-              className="form-control" 
-              id="name" 
-              name="name" 
+            <input
+              type="text"
+              className="form-control"
+              id="name"
+              name="name"
               required
               value={name} // Control
               onChange={(e) => setName(e.target.value)} // Update state
@@ -206,23 +208,23 @@ export default function Booking() {
           </div>
           <div className="mb-3">
             <label htmlFor="phone" className="form-label text-light">Phone Number (same as above):</label>
-            <input 
-              type="tel" 
-              className="form-control" 
-              id="phone" 
-              name="phone" 
-              required 
+            <input
+              type="tel"
+              className="form-control"
+              id="phone"
+              name="phone"
+              required
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
             />
           </div>
           <div className="mb-3">
             <label htmlFor="zipCode" className="form-label text-light">Event Zip-Code:</label>
-            <input 
-              type="text" 
-              className="form-control" 
-              id="zipCode" 
-              name="zipCode" 
+            <input
+              type="text"
+              className="form-control"
+              id="zipCode"
+              name="zipCode"
               required
               value={zipCode}
               onChange={(e) => setZipCode(e.target.value)}
@@ -230,10 +232,10 @@ export default function Booking() {
           </div>
           <div className="mb-3">
             <label htmlFor="referralName" className="form-label text-light">Name of Referral:</label>
-            <input 
-              type="text" 
-              className="form-control" 
-              id="referralName" 
+            <input
+              type="text"
+              className="form-control"
+              id="referralName"
               name="referralName"
               value={referralName}
               onChange={(e) => setReferralName(e.target.value)}
@@ -241,16 +243,16 @@ export default function Booking() {
           </div>
           <div className="mb-3">
             <label htmlFor="referralPhone" className="form-label text-light">Phone Number of Referral:</label>
-            <input 
-              type="tel" 
-              className="form-control" 
-              id="referralPhone" 
+            <input
+              type="tel"
+              className="form-control"
+              id="referralPhone"
               name="referralPhone"
               value={referralPhone}
               onChange={(e) => setReferralPhone(e.target.value)}
             />
           </div>
-          <div className="form-check mb-4 text-center">
+          <div className="form-check mb-2 text-center">
             <input
               className="form-check-input me-2"
               type="checkbox"
@@ -264,7 +266,22 @@ export default function Booking() {
               I have filled out the booking calendar above
             </label>
           </div>
-          <button type="submit" className="btn btn-danger w-100" disabled={!calendarChecked}>
+
+          <div className="form-check mb-4 text-center">
+            <input
+              className="form-check-input me-2"
+              type="checkbox"
+              id="depositChecked"
+              checked={depositChecked}
+              onChange={e => setDepositChecked(e.target.checked)}
+              required
+              style={{ transform: 'scale(1.3)', cursor: 'pointer', verticalAlign: 'middle' }}
+            />
+            <label className="form-check-label text-light fw-semibold" htmlFor="depositChecked" style={{ cursor: 'pointer' }}>
+              I agree to paying a 25% deposit of ${packageSpec ? (packageSpec.totalPrice * 0.25).toFixed(2) : '0.00'} to secure the booking no later than 15 days prior to the event
+            </label>
+          </div>
+          <button type="submit" className="btn btn-danger w-100" disabled={!calendarChecked || !depositChecked}>
             Submit Booking
           </button>
         </form>

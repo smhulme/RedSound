@@ -16,7 +16,7 @@ input:focus {
 }
 
 form label,
-form input,
+form input:not([type="checkbox"]),
 form button {
   display: block;
   margin: 8px auto 4px auto;
@@ -78,7 +78,7 @@ main {
   }
 
   form label,
-  form input,
+  form input:not([type="checkbox"]),
   form button {
     width: 95vw;
     max-width: 320px;
